@@ -21,224 +21,168 @@
 ;;     (with-eval-after-load 'ligo-mode
 ;;       (ligo-setup-lsp)))
 
+;;; Code:
+
 (defface ligo-font-lock-attribute-face
-	'(
-		(t (:inherit font-lock-preprocessor-face ))
-	  )
+	'((t (:inherit font-lock-preprocessor-face )))
 	"Face description for todos."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-attribute-face
 	'ligo-font-lock-attribute-face)
 
 (defface ligo-font-lock-character-face
-	'(
-		(t (:inherit font-lock-string-face ))
-	  )
+	'((t (:inherit font-lock-string-face )))
 	"Face description for characters."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-character-face
 	'ligo-font-lock-character-face)
 
 (defface ligo-font-lock-number-face
-	'(
-		(t (:inherit default ))
-	  )
+	'((t (:inherit default )))
 	"Face description for numbers."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-number-face
 	'ligo-font-lock-number-face)
 
 (defface ligo-font-lock-float-face
-	'(
-		(t (:inherit default ))
-	  )
+	'((t (:inherit default )))
 	"Face description for floats."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-float-face
 	'ligo-font-lock-float-face)
 
 (defface ligo-font-lock-builtin-function-face
-	'(
-		(t (:inherit font-lock-function-name-face ))
-	  )
+	'((t (:inherit font-lock-function-name-face )))
 	"Face description for builtin functions."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-builtin-function-face
 	'ligo-font-lock-builtin-function-face)
 
 (defface ligo-font-lock-statement-face
-	'(
-		(t (:inherit font-lock-keyword-face ))
-	  )
+	'((t (:inherit font-lock-keyword-face )))
 	"Face description for statements."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-statement-face
 	'ligo-font-lock-statement-face)
 
 (defface ligo-font-lock-conditional-face
-	'(
-		(t (:inherit font-lock-keyword-face ))
-	  )
+	'((t (:inherit font-lock-keyword-face )))
 	"Face description for conditionals."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-conditional-face
 	'ligo-font-lock-conditional-face)
 
 (defface ligo-font-lock-repeat-face
-	'(
-		(t (:inherit font-lock-keyword-face ))
-	  )
+	'((t (:inherit font-lock-keyword-face )))
 	"Face description for repeat keywords."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-repeat-face
 	'ligo-font-lock-repeat-face)
 
 (defface ligo-font-lock-label-face
 	'(
-		(((background dark)) (:foreground "#eedd82" ))
-		(t (:inherit font-lock-function-name-face ))
-	  )
+		(((background dark)) (:foreground "#eedd82"))
+		(t (:inherit font-lock-function-name-face )))
 	"Face description for labels."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-label-face
 	'ligo-font-lock-label-face)
 
 (defface ligo-font-lock-operator-face
-	'(
-		(t (:inherit default ))
-	  )
+	'((t (:inherit default )))
 	"Face description for operators."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-operator-face
 	'ligo-font-lock-operator-face)
 
 (defface ligo-font-lock-exception-face
 	'(
-		(((background light)) (:foreground "dark orange" ))
-		(((background dark)) (:foreground "orange" ))
-	  )
+		(((background light)) (:foreground "dark orange"))
+		(((background dark)) (:foreground "orange")))
 	"Face description for exceptions."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-exception-face
 	'ligo-font-lock-exception-face)
 
 (defface ligo-font-lock-builtin-type-face
-	'(
-		(t (:inherit font-lock-type-face ))
-	  )
+	'((t (:inherit font-lock-type-face )))
 	"Face description for builtin types."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-builtin-type-face
 	'ligo-font-lock-builtin-type-face)
 
 (defface ligo-font-lock-storage-class-face
-	'(
-		(t (:inherit font-lock-keyword-face ))
-	  )
+	'((t (:inherit font-lock-keyword-face )))
 	"Face description for storage classes."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-storage-class-face
 	'ligo-font-lock-storage-class-face)
 
 (defface ligo-font-lock-builtin-module-face
-	'(
-		(t (:inherit font-lock-function-name-face ))
-	  )
+	'((t (:inherit font-lock-function-name-face )))
 	"Face description for builtin modules."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-builtin-module-face
 	'ligo-font-lock-builtin-module-face)
 
 (defface ligo-font-lock-structure-face
-	'(
-		(t (:inherit font-lock-constant-face ))
-	  )
+	'((t (:inherit font-lock-constant-face )))
 	"Face description for structures."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-structure-face
 	'ligo-font-lock-structure-face)
 
 (defface ligo-font-lock-type-def-face
-	'(
-		(t (:inherit font-lock-type-face ))
-	  )
+	'((t (:inherit font-lock-type-face )))
 	"Face description for type definitions."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-type-def-face
 	'ligo-font-lock-type-def-face)
 
 (defface ligo-font-lock-special-char-face
-	'(
-		(t (:inherit font-lock-string-face ))
-	  )
+	'((t (:inherit font-lock-string-face )))
 	"Face description for special characters."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-special-char-face
 	'ligo-font-lock-special-char-face)
 
 (defface ligo-font-lock-special-comment-face
-	'(
-		(t (:inherit font-lock-comment-face ))
-	  )
+	'((t (:inherit font-lock-comment-face )))
 	"Face description for special comments."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-special-comment-face
 	'ligo-font-lock-special-comment-face)
 
 (defface ligo-font-lock-error-face
-	'(
-		(t (:inherit error ))
-	  )
+	'((t (:inherit error )))
 	"Face description for errors."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-error-face
 	'ligo-font-lock-error-face)
 
 (defface ligo-font-lock-todo-face
-	'(
-		(t (:inherit highlight ))
-	  )
+	'((t (:inherit highlight )))
 	"Face description for todos."
-	:group 'ligo
-  )
+	:group 'ligo)
 
 (defvar ligo-font-lock-todo-face
 	'ligo-font-lock-todo-face)
@@ -251,6 +195,7 @@
   "Path to LIGO executable."
   :type 'string
   :group 'ligo)
+
 ;; Forward declarations for byte compiler
 (defvar lsp-language-id-configuration)
 (declare-function lsp-register-client 'lsp-mode)
@@ -274,8 +219,6 @@
 	(unload-feature 'ligo-mode)
 	(require 'ligo-mode)
 	(normal-mode))
-
-(add-to-list 'auto-mode-alist '("\\.mligo\\'" . ligo-caml-mode))
 
 (require 'ligo-caml-mode)
 (require 'jsligo-mode)

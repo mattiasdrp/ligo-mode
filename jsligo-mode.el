@@ -42,46 +42,33 @@
 (defvar jsligo-font-lock-defaults
 	`(
 		(,"\\(@[a-zA-Z][a-zA-Z0-9_:.@%]*\\)"
-		 . ligo-font-lock-attribute-face
-		 )
+		 . ligo-font-lock-attribute-face)
 		(,"^\\(#[a-zA-Z]+\\)"
-		 . font-lock-preprocessor-face
-		 )
+		 . font-lock-preprocessor-face)
 		(,"\\b\\(let\\|const\\)\\b"
-		 (1 font-lock-keyword-face)
-		 )
+		 (1 font-lock-keyword-face))
 		(,"\\b\\(export\\|import\\|from\\|contract_of\\|parameter_of\\|function\\|do\\|namespace\\|interface\\|implements\\|extends\\|false\\|true\\)\\b"
-		 (1 font-lock-keyword-face)
-		 )
+		 (1 font-lock-keyword-face))
 		(,"\\b\\(switch\\|if\\|else\\|for\\|of\\|while\\|return\\|break\\|continue\\|match\\)\\b"
-		 . ligo-font-lock-conditional-face
-		 )
+		 . ligo-font-lock-conditional-face)
 		(,"\\b[-+]?\\([0-9]+\\)\\(n\\|\\tz\\|tez\\|mutez\\|\\)\\b"
-		 . ligo-font-lock-number-face
-		 )
+		 . ligo-font-lock-number-face)
 		(,"\\b\\(-\\|+\\|%\\|&&\\||\\||==\\|!=\\|<=\\|>=\\|<\\|>\\|\\*\\|/\\|=\\|!\\|\\*=\\|/=\\|%=\\|+=\\|-=\\)\\b"
-		 . ligo-font-lock-operator-face
-		 )
-		(,";"
-		 )
-		(,","
-		 )
+		 . ligo-font-lock-operator-face)
+		(,";")
+		(,",")
 		(,"?" ( 1 ligo-font-lock-operator-face))
 		(,"\\bwhen\\b" ( 1 ligo-font-lock-conditional-face))
 		(,"\\b\\([A-Z][a-zA-Z0-9_$]*\\)\\b"
-		 (1 ligo-font-lock-structure-face)
-		 )
+		 (1 ligo-font-lock-structure-face))
 		(,"\\b\\([a-z$_][a-zA-Z0-9$_]*\\)\\b"
-		 (1 font-lock-variable-name-face)
-		 )
+		 (1 font-lock-variable-name-face))
 		(,"\\b\\([A-Z][a-zA-Z0-9_$]*\\)\\.[:space:]*\\b\\([a-zA-Z0-9_$]*\\)\\b"
 		 (1 ligo-font-lock-structure-face)
-		 (2 font-lock-variable-name-face)
-		 )
+		 (2 font-lock-variable-name-face))
 		(,"\\b\\(import\\)\\b[:space:]*\\b\\([A-Z][a-zA-Z0-9_$]*\\)\\b"
 		 (1 ligo-font-lock-conditional-face)
-		 (2 ligo-font-lock-structure-face)
-		 )
+		 (2 ligo-font-lock-structure-face))
 		(,"{" ())
 		(,"\\(" ())
 		(,"\\b\\(case\\|default\\)\\b" ( 1 ligo-font-lock-conditional-face))
@@ -95,22 +82,17 @@
 		(,":" ( 1 ligo-font-lock-operator-face))
 		(,"\\bas\\b" ( 1 font-lock-keyword-face))
 		(,"\\(=>\\|\\.\\||\\)"
-		 . ligo-font-lock-operator-face
-		 )
+		 . ligo-font-lock-operator-face)
 		(,"<" ())
 		(,"\\b\\([a-zA-Z$_][a-zA-Z0-9$_]*\\)\\b[:space:]*:"
-		 (1 font-lock-variable-name-face)
-		 )
+		 (1 font-lock-variable-name-face))
 		(,"\\b[a-zA-Z_][a-zA-Z0-9]\\*\\b"
-		 . font-lock-type-face
-		 )
+		 . font-lock-type-face)
 		(,"\\(" ())
 		(,"\\b\\([0-9]+\\)\\b"
-		 . ligo-font-lock-number-face
-		 )
+		 . ligo-font-lock-number-face)
 		(,"\\[" ())
-		(,"{" ())
-	  )
+		(,"{" ()))
 	"Syntax highlighting rules for jsligo")
 
 (defun jsligo-reload ()
